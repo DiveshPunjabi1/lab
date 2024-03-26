@@ -1,7 +1,7 @@
 {
     "name": "PWA Tutorial",
     "short_name": "Delice",
-    "start_url": "ani.html",
+    "start_url": "index.html",
     "scope": "./",
     "icons": [
         {
