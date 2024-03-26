@@ -2,11 +2,12 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="manifest" href="casmart\assets\js\manifest.json">
-  <script src="casmart\assets\js\service-worker.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport"content="width=device-width,initial-scale=1">
+  <meta http-equiv="X-UA-Compatible"content="ie=edge">
+
+  <link rel="manifest" href="manifest.json">
+  <script src="service-worker.js"></script>
   <title> shopping center</title>
 
   <!-- 
@@ -1158,7 +1159,26 @@
     - custom js link
   -->
   <script src="./assets/js/script.js"></script>
-
+  <script>
+    window.addEventListener('load', () => {
+    registerSW();
+    });
+  
+    // Register the Service Worker
+    async function registerSW() {
+    if ('serviceWorker' in navigator) {
+      try {
+      await navigator
+          .serviceWorker
+          .register('serviceworker.js');
+      }
+      catch (e) {
+      console.log('SW registration failed');
+      }
+    }
+    }
+  </script>
+  
   <!-- 
     - ionicon link
   -->
